@@ -1,4 +1,4 @@
-# Coding skills assessment - videogames_list_flutter
+# Coding skills assessment - videogames_list_mobile
 As part of our technical evaluation, the team has designed a take-home assignment for you that can be reasonably completed in a 1 to 3 day period.
 
 If you have any questions, feel free to email your HR correspondent and we will be happy to get back to you as soon as possible.
