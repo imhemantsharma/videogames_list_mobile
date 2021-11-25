@@ -23,13 +23,14 @@ The assignment is to build a mobile application to browse the **latest released*
     2. Release Date
     3. Background Image
     4. Metacritic Score
-3. The user is able to view more details (including previous details) of a video game by tapping on a video game:
+3. Pagination: When the user reached the bottom of the list, it should load the second page if available.
+4. The user is able to view more details (including previous details) of a video game by tapping on a video game:
     1. Description
     2. Genres
     3. (Optional) Any other details you think are useful or interesting for the user such as Screenshots, Other Platforms, Developers, Publishers.
-4. Use Git for managing your source code. Your project must be checked into GitHub and be shared with the team when submitting your assignment.
-5. Update the project’s README to include instructions/steps to compile and debug the project as necessary
-6. The data is fetched from the given API below
+5. Use Git for managing your source code. Your project must be checked into GitHub and be shared with the team when submitting your assignment.
+6. Update the project’s README to include instructions/steps to compile and debug the project as necessary
+7. The data is fetched from the given API below
 
 ## **API**
 Fetch the data from RAWG Video Games Database API [https://api.rawg.io/docs/](https://api.rawg.io/docs/). RAWG is an OpenAPI-compliant free API, you can download the specification from the same link.
