@@ -48,8 +48,9 @@ Highly suggested that the candidate gets an API key themselves as it is free, ju
 2. The solution should be designed and architected to the utmost of your engineering ability. The code should be clean, readable, extensible, testable, performant and maintainable.
 3. The project should be compilable and debuggable
 4. Consider using a state-management framework such as Bloc, Provider, Redux or MobX.
-5. Having tests (e.g unit tests, widget tests etc) are greatly appreciated
-6. If shortlisted, the candidate is expected to present their solution at the end of the assignment in a subsequent video call.
-7. The candidate will be asked to explain their design decisions. Think about why you chose a certain pattern/framework/structure carefully.
+5. Try to breakdown your solution into multiple commits and use readable commit message.
+6. Having tests (e.g unit tests, widget tests etc) are greatly appreciated
+7. If shortlisted, the candidate is expected to present their solution at the end of the assignment in a subsequent video call.
+8. The candidate will be asked to explain their design decisions. Think about why you chose a certain pattern/framework/structure carefully.
    - If needed, you can have any supporting documentation that can help present your design.
 9. In a nutshell, build the solution for longevity, as though it will be worked on and maintained by a team. And most importantly, have fun :)
