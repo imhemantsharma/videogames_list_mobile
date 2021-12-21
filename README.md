@@ -33,15 +33,30 @@ The assignment is to build a mobile application to browse the **latest released*
 7. The data is fetched from the given API below
 
 ## **API**
-Fetch the data from RAWG Video Games Database API [https://api.rawg.io/docs/](https://api.rawg.io/docs/). RAWG is an OpenAPI-compliant free API, you can download the specification from the same link.
+Fetch the data from RAWG Video Games Database API [https://api.rawg.io/docs/](https://api.rawg.io/docs/). RAWG is an OpenAPI-compliant free API, you can download the OpenAPI/Swagger specification from the same link.
 
-**Fetch page 1 of released Playstation 5 games from 2020-10-03 to 2021-10-03:**
-[https://api.rawg.io/api/games?page=1&page_size=20&platforms=187&dates=2020-10-03,2021-10-03&ordering=released&key=02ef6ba5d13444ee86bad607e8bce3f4](https://api.rawg.io/api/games?page=1&page_size=20&platforms=187&dates=2020-10-03,2021-10-03&ordering=released&key=02ef6ba5d13444ee86bad607e8bce3f4)
 
-**Fetch the details of a game (In this case, FIFA 21):**
+### **Fetch latest Playstation 5 games:**
+[https://api.rawg.io/api/games?page=1&page_size=20&platforms=187&dates=2020-12-21,2021-12-21&ordering=-released&key=02ef6ba5d13444ee86bad607e8bce3f4](https://api.rawg.io/api/games?page=1&page_size=20&platforms=187&dates=2020-12-21,2021-12-21&ordering=-released&key=02ef6ba5d13444ee86bad607e8bce3f4)
+
+Query Explanation:
+- `https://api.rawg.io/api/games`: Games endpoint
+- `page=1`: Page 1 of results
+- `page_size=20`: Limit the resuts to 20 at a time
+- `platforms=187`: Playstation 5 platform
+- `dates=2020-12-21,2021-12-21`: Start date, end date. Limits the results to 1 year timeframe. Replace end date with the current date, replace start date minus 1 year from current date.
+- `ordering=-released`: Sort by released descending
+- `key=02ef6ba5d13444ee86bad607e8bce3f4`: Replace the key with yours (if any)
+
+### **Fetch details of a game (In this case, FIFA 21):**
 [https://api.rawg.io/api/games/437049?key=02ef6ba5d13444ee86bad607e8bce3f4](https://api.rawg.io/api/games/437049?key=02ef6ba5d13444ee86bad607e8bce3f4)
 
-Highly suggested that the candidate gets an API key themselves as it is free, just follow the link above, but you can also use ours provided it has not run out of requests or expired: 02ef6ba5d13444ee86bad607e8bce3f4
+Query Explanation:
+- `https://api.rawg.io/api/games/`: Games endpoint
+- `437049`: Game ID for 'FIFA 21'
+- `key=02ef6ba5d13444ee86bad607e8bce3f4`: Replace the key with yours (if any)
+
+> Highly suggest the candidate get an API key as it is free, just follow the link above. But you can also use ours provided it has not run out of requests or expired: 02ef6ba5d13444ee86bad607e8bce3f4
 
 ## **Evaluation Criteria**
 1. Feel free to be as creative as you can be in terms of UI/UX or code design, this should be a fun assignment!
