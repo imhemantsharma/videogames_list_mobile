@@ -32,6 +32,17 @@ The assignment is to build a mobile application to browse the **latest released*
 6. Update the project’s README to include instructions/steps to compile and debug the project as necessary
 7. The data is fetched from the given API below
 
+## **Evaluation Criteria**
+1. The solution should be designed and architected to the utmost of your engineering ability. The code should be clean, readable, extensible, testable, performant and maintainable.
+2. The project should be compilable and debuggable.
+3. Try to breakdown your solution into multiple commits and use readable commit message.
+4. Consider using a state-management framework such as Bloc, Provider, Redux or MobX.
+5. Having tests (e.g unit tests, widget tests etc) are greatly appreciated.
+6. If shortlisted, the candidate is expected to discuss their assignment in a subsequent video call. The candidate will be asked to explain their design decisions. Think about why you chose a certain pattern/framework/structure carefully.
+   - If needed, you can have any supporting documentation that can help present your design.
+7. In a nutshell, build the solution for longevity, as though it will be worked on and maintained by a team. And most importantly, have fun :) Feel free to be as creative as you'd like for UI/UX and design.
+
+
 ## **API**
 Fetch the data from RAWG Video Games Database API [https://api.rawg.io/docs/](https://api.rawg.io/docs/). RAWG is an OpenAPI-compliant free API, you can download the OpenAPI/Swagger specification from the same link.
 
@@ -57,15 +68,3 @@ Query Explanation:
 - `key=02ef6ba5d13444ee86bad607e8bce3f4`: Replace the key with yours (if any)
 
 > Highly suggest the candidate get an API key as it is free, just follow the link above. But you can also use ours provided it has not run out of requests or expired: 02ef6ba5d13444ee86bad607e8bce3f4
-
-## **Evaluation Criteria**
-1. Feel free to be as creative as you can be in terms of UI/UX or code design, this should be a fun assignment!
-2. The solution should be designed and architected to the utmost of your engineering ability. The code should be clean, readable, extensible, testable, performant and maintainable.
-3. The project should be compilable and debuggable
-4. Consider using a state-management framework such as Bloc, Provider, Redux or MobX.
-5. Try to breakdown your solution into multiple commits and use readable commit message.
-6. Having tests (e.g unit tests, widget tests etc) are greatly appreciated
-7. If shortlisted, the candidate is expected to present their solution at the end of the assignment in a subsequent video call.
-8. The candidate will be asked to explain their design decisions. Think about why you chose a certain pattern/framework/structure carefully.
-   - If needed, you can have any supporting documentation that can help present your design.
-9. In a nutshell, build the solution for longevity, as though it will be worked on and maintained by a team. And most importantly, have fun :)
