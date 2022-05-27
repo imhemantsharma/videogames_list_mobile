@@ -38,13 +38,14 @@ The assignment is to build a mobile application to browse the **latest released*
 3. Try to breakdown your solution into multiple commits and use readable commit message.
 4. Consider using a state-management framework such as Bloc, Provider, Redux or MobX.
 5. Having tests (e.g unit tests, widget tests etc) are greatly appreciated.
-6. If shortlisted, the candidate is expected to discuss their assignment in a subsequent video call. The candidate will be asked to explain their design decisions. Think about why you chose a certain pattern/framework/structure carefully.
+   - For seniors or SE3+ candidates we **strongly** recommend writing tests
+7. If shortlisted, the candidate is expected to discuss their assignment in a subsequent video call. The candidate will be asked to explain their design decisions. Think about why you chose a certain pattern/framework/structure carefully.
    - If needed, you can have any supporting documentation that can help present your design.
-7. In a nutshell, build the solution for longevity, as though it will be worked on and maintained by a team. And most importantly, have fun :) Feel free to be as creative as you'd like for UI/UX and design.
+8. In a nutshell, build the solution for longevity, as though it will be worked on and maintained by a team. And most importantly, have fun :) Feel free to be as creative as you'd like for UI/UX and design.
 
 
 ## **API**
-Fetch the data from RAWG Video Games Database API [https://api.rawg.io/docs/](https://api.rawg.io/docs/). RAWG is an OpenAPI-compliant free API, you can download the OpenAPI/Swagger specification from the same link.
+Fetch the data from RAWG Video Games Database API [https://api.rawg.io/docs/](https://api.rawg.io/docs/). RAWG is an **OpenAPI-compliant free API**, you can download the OpenAPI/Swagger specification from the same link.
 
 
 ### **Fetch latest Playstation 5 games:**
