@@ -1,7 +1,8 @@
 part of 'app_pages.dart';
 
 enum Routes {
-  launch('/');
+  launch('/'),
+  gameDetail('/gameDetail');
 
   final String routeName;
 

@@ -1,5 +1,6 @@
 enum APIEndPoints {
-  users('users');
+  playstationGames('games'),
+  playstationGameDetail('games/{gameId}');
 
   final String path;
 

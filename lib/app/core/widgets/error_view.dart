@@ -32,83 +32,57 @@ class ErrorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Align(
       alignment: Alignment.center,
-      margin: const EdgeInsets.all(AppValues.marginDouble),
-      padding: const EdgeInsets.all(
-          AppValues.paddingDouble + AppValues.paddingDefault),
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(AppValues.radiusDefault),
-        color: bgColor ?? Colors.black.withOpacity(0.03),
-      ),
-      height: containerHeight,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
+      child: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(AppValues.marginDouble),
+        padding: const EdgeInsets.all(
+            AppValues.paddingDouble + AppValues.paddingDefault),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppValues.radiusDefault),
+          color: bgColor ?? Colors.black.withOpacity(0.03),
+        ),
+        height: containerHeight,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+                _networkController.isNetworkConnected.value
+                    ? messageTitle ?? S.of(context).noNetworkTitle
+                    : S.of(context).noNetworkTitle,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3!
+                    .copyWith(color: titleColor)),
+            const SizedBox(height: AppValues.paddingMini),
+            Text(
               _networkController.isNetworkConnected.value
-                  ? messageTitle ?? S.of(context).noNetworkTitle
-                  : S.of(context).noNetworkTitle,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline3!
-                  .copyWith(color: titleColor)),
-          const SizedBox(height: AppValues.paddingMini),
-          Text(
-            _networkController.isNetworkConnected.value
-                ? messageDesc ?? ''
-                : S.of(context).noNetworkMessage,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                fontWeight: FontWeight.normal,
-                color: descriptionColor ?? Theme.of(context).disabledColor),
-          ),
-          const SizedBox(height: AppValues.paddingDouble),
-          if (onErrorCTAClicked != null) _errorCTA(context),
-        ],
-      ),
-    );
-  }
-
-  Widget _errorCTA(BuildContext context) {
-    return Container(
-      width: 100,
-      margin: const EdgeInsets.all(AppValues.marginDouble),
-      child: Material(
-        elevation: 2,
-        borderRadius: BorderRadius.circular(21),
-        type: MaterialType.card,
-        child: InkWell(
-          onTap: onErrorCTAClicked,
-          borderRadius: BorderRadius.circular(21),
-          child: Container(
-            padding: const EdgeInsets.all(AppValues.paddingDefault),
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 1,
-                color: Theme.of(context).primaryColor,
-              ),
-              borderRadius: BorderRadius.circular(21),
+                  ? messageDesc ?? ''
+                  : S.of(context).noNetworkMessage,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                  fontWeight: FontWeight.normal,
+                  color: descriptionColor ?? Theme.of(context).disabledColor),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
+            const SizedBox(height: AppValues.paddingDouble),
+            if (onErrorCTAClicked != null)
+              ElevatedButton.icon(
+                onPressed: onErrorCTAClicked,
+                label: Text(
+                  errorCTA ?? 'Retry',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2
+                      ?.copyWith(color: Colors.white),
+                ),
+                icon: Icon(
                   errorIcon ?? Icons.refresh,
                   size: AppValues.iconSizeDefault,
                 ),
-                const SizedBox(width: AppValues.paddingMini),
-                Expanded(
-                  child: Text(
-                    errorCTA ?? 'Retry',
-                    style: Theme.of(context).textTheme.bodyText2,
-                  ),
-                ),
-              ],
-            ),
-          ),
+              ),
+          ],
         ),
       ),
     );

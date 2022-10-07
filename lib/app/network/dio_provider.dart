@@ -4,7 +4,8 @@ import 'package:videogames_list_mobile/app/network/pretty_dio_logger.dart';
 import 'package:videogames_list_mobile/app/network/request_headers.dart';
 
 class DioProvider {
-  static const String baseUrl = 'https://jsonplaceholder.typicode.com/';
+  static const String baseUrl = 'https://api.rawg.io/api/';
+  static const String apiKey = '02ef6ba5d13444ee86bad607e8bce3f4';
 
   static Dio? _instance;
 

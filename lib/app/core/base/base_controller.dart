@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:videogames_list_mobile/app/network/exceptions/api_exception.dart';
@@ -26,7 +27,7 @@ abstract class BaseController extends GetxController {
   }) async {
     if (!networkController.isNetworkConnected.value) {
       if (onNetworkError != null) {
-        onNetworkError(S.of(Get.context!).noNetworkMessage);
+        onNetworkError(S.of(Get.context as BuildContext).noNetworkMessage);
       }
       return;
     }
