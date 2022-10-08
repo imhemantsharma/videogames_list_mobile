@@ -7,17 +7,17 @@ import 'package:videogames_list_mobile/app/modules/videogame/widget/metacratic_v
 
 class GameCardView extends StatelessWidget {
   const GameCardView({
-    Key? key,
-    this.poster,
+    super.key,
+    this.posterUrl,
     this.name,
     this.date,
     this.rating,
     this.metacriticScore,
     this.metacriticScoreColor,
     this.onCardTap,
-  }) : super(key: key);
+  });
 
-  final String? poster;
+  final String? posterUrl;
   final String? name;
   final String? date;
   final double? rating;
@@ -47,7 +47,7 @@ class GameCardView extends StatelessWidget {
                       child: AspectRatio(
                         aspectRatio: AppValues.smallImageAspectRatio,
                         child: CachedNetworkImage(
-                          imageUrl: poster ?? '',
+                          imageUrl: posterUrl ?? '',
                           fit: BoxFit.cover,
                           errorWidget: (context, url, error) => Image.asset(
                               'assets/images/img_placeholder.png',

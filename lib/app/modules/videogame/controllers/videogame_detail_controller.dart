@@ -23,8 +23,9 @@ class VideoGameDetailController extends BaseController
 
     if (gameID.isEmpty) {
       change(null,
-          status: RxStatus.error(
-              S.of(Get.context as BuildContext).unavailableGameId));
+          status: RxStatus.error((Get.context == null)
+              ? ""
+              : S.of(Get.context as BuildContext).unavailableGameId));
       return;
     }
 

@@ -4,12 +4,12 @@ import 'package:videogames_list_mobile/app/core/values/text_styles.dart';
 
 class MetacraticView extends StatelessWidget {
   const MetacraticView({
-    Key? key,
+    super.key,
     this.metacriticScore = 0,
     this.metacriticScoreColor,
     this.borderRadius,
     this.alignment,
-  }) : super(key: key);
+  });
 
   final int metacriticScore;
   final Color? metacriticScoreColor;

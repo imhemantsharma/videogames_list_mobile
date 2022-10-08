@@ -7,9 +7,9 @@ import 'package:videogames_list_mobile/app/data/model/playstation_game_platform.
 
 class GamePlatformsView extends StatelessWidget {
   const GamePlatformsView({
-    Key? key,
+    super.key,
     required this.platforms,
-  }) : super(key: key);
+  });
 
   final List<PlaystationGamePlatform> platforms;
 

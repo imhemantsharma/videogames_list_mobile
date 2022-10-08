@@ -12,14 +12,14 @@ class AnimationView extends StatefulWidget {
   final bool fadeIn;
 
   const AnimationView({
-    Key? key,
+    super.key,
     required this.child,
     this.delay = Duration.zero,
     this.fadingDuration = const Duration(milliseconds: 800),
     this.slidingCurve = Curves.decelerate,
     this.slidingBeginOffset = const Offset(0.0, 0.10),
     this.fadeIn = true,
-  }) : super(key: key);
+  });
 
   @override
   State<AnimationView> createState() => _AnimationViewState();

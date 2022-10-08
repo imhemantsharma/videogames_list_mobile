@@ -12,7 +12,7 @@ import 'package:videogames_list_mobile/app/modules/videogame/widget/game_card_vi
 import 'package:videogames_list_mobile/generated/l10n.dart';
 
 class VideoGameView extends GetView<VideoGameController> {
-  const VideoGameView({Key? key}) : super(key: key);
+  const VideoGameView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +66,7 @@ class VideoGameView extends GetView<VideoGameController> {
                 PlaystationGameData data = state[index];
                 return GameCardView(
                   name: data.name,
-                  poster: data.backgroundImage,
+                  posterUrl: data.backgroundImage,
                   date: DateUtil.getDefaultFormattedDate(data.released),
                   rating: data.rating?.toDouble(),
                   metacriticScore: data.metacritic?.toInt(),

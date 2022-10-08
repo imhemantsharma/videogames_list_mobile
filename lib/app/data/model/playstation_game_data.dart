@@ -1,11 +1,11 @@
-import 'playstion_game_store.dart';
-import 'playstation_game_rating.dart';
-import 'playstion_game_added_by_status.dart';
-import 'playstation_game_tag.dart';
-import 'playstion_game_esrb_rating.dart';
-import 'playstion_game_screenshots.dart';
 import 'playstation_game_genre.dart';
 import 'playstation_game_platform.dart';
+import 'playstation_game_rating.dart';
+import 'playstation_game_tag.dart';
+import 'playstion_game_added_by_status.dart';
+import 'playstion_game_esrb_rating.dart';
+import 'playstion_game_screenshots.dart';
+import 'playstion_game_store.dart';
 
 class PlaystationGameData {
   PlaystationGameData({

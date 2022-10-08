@@ -266,7 +266,7 @@ class VideoGameDetailView extends GetView<VideoGameDetailController> {
         onLoading: const LoadingView(),
         onError: (error) => ErrorView(
           messageTitle: S.of(context).somethingWentTitle,
-          messageDesc: error,
+          messageDesc: error ?? S.of(context).unavailableGameId,
           errorCTA: S.of(context).retry,
           containerHeight: MediaQuery.of(context).size.height / 1.5,
           onErrorCTAClicked: controller.onInit,

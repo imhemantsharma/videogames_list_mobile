@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class DraggableSheetView extends StatelessWidget {
   const DraggableSheetView({
-    Key? key,
+    super.key,
     required this.child,
     this.minSize,
-  }) : super(key: key);
+  });
 
   final List<Widget> child;
   final double? minSize;

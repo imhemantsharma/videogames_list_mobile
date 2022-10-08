@@ -26,7 +26,7 @@ class PaginationErrorView extends StatelessWidget {
           ElevatedButton.icon(
             onPressed: onTap,
             label: Text(
-              errorTitle ?? S.of(context).retry,
+              S.of(context).retry,
               style: Theme.of(context)
                   .textTheme
                   .bodyText2

@@ -6,7 +6,7 @@ import 'package:videogames_list_mobile/generated/l10n.dart';
 
 class ErrorView extends StatelessWidget {
   ErrorView({
-    Key? key,
+    super.key,
     this.containerHeight,
     this.messageTitle,
     this.messageDesc,
@@ -16,7 +16,7 @@ class ErrorView extends StatelessWidget {
     this.descriptionColor,
     this.bgColor,
     this.onErrorCTAClicked,
-  }) : super(key: key);
+  });
 
   final double? containerHeight;
   final String? messageTitle;
@@ -50,8 +50,8 @@ class ErrorView extends StatelessWidget {
           children: [
             Text(
                 _networkController.isNetworkConnected.value
-                    ? messageTitle ?? S.of(context).noNetworkTitle
-                    : S.of(context).noNetworkTitle,
+                    ? messageTitle ?? S.of(context).errorTitle
+                    : S.of(context).errorTitle,
                 style: Theme.of(context)
                     .textTheme
                     .headline3!
