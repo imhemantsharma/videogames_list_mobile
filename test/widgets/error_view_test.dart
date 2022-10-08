@@ -10,7 +10,7 @@ import '../mock_network_controller.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  
+
   group('Network connected', () {
     setUpAll(
         () => Get.lazyPut<INetworkInfoProvider>(() => MockNetworkController()));

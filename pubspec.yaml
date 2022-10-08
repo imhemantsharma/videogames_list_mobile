@@ -46,7 +46,7 @@ dependencies:
   pretty_dio_logger: ^1.1.1
 
   #Discovering the state of the network (WiFi & mobile/cellular) connectivity.
-  connectivity_plus: ^2.3.6+1
+  connectivity_plus: ^2.3.9
 
   intl: ^0.17.0
 

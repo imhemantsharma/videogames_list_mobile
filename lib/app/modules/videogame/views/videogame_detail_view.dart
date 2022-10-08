@@ -42,29 +42,19 @@ class VideoGameDetailView extends GetView<VideoGameDetailController> {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 30, sigmaY: 50),
             child: Container(
-              color: Colors.black.withOpacity(.5),
+              color: Colors.black,
               child: Stack(
-                // physics: BouncingScrollPhysics(),
                 children: [
                   Stack(
                     children: [
-                      InkWell(
-                        onTap: () {
-                          /// Todo open image view
-                        },
-                        child: SizedBox(
-                          height:
-                              MediaQuery.of(context).size.height * (1 - 0.63),
-                          width: MediaQuery.of(context).size.width,
-                          child: CachedNetworkImage(
-                            imageUrl: state?.backgroundImageAdditional ??
-                                state?.backgroundImage ??
-                                '',
-                            fit: BoxFit.cover,
-                            errorWidget: (context, url, error) => Image.asset(
-                                'assets/images/img_placeholder.png',
-                                fit: BoxFit.cover),
-                          ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * (1 - 0.63),
+                        width: MediaQuery.of(context).size.width,
+                        child: CachedNetworkImage(
+                          imageUrl: state?.backgroundImageAdditional ??
+                              state?.backgroundImage ??
+                              '',
+                          fit: BoxFit.cover,
                         ),
                       ),
                       SafeArea(
@@ -203,8 +193,6 @@ class VideoGameDetailView extends GetView<VideoGameDetailController> {
                                             Helper.metacriticScoreColor(
                                                 state?.metacritic?.toInt() ??
                                                     0),
-                                        borderRadius: BorderRadius.circular(
-                                            AppValues.radiusDefault),
                                         alignment: Alignment.centerLeft,
                                       ),
                                     ),

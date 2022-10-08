@@ -108,7 +108,10 @@ class GameCardView extends StatelessWidget {
               ),
               MetacraticView(
                   metacriticScore: metacriticScore ?? 0,
-                  metacriticScoreColor: metacriticScoreColor)
+                  metacriticScoreColor: metacriticScoreColor,
+                  borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(AppValues.radiusDefault),
+                      bottomLeft: Radius.circular(AppValues.radiusDefault)))
             ],
           ),
         ),

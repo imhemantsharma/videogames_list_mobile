@@ -24,9 +24,8 @@ class MetacraticView extends StatelessWidget {
         width: 34,
         height: 34,
         decoration: BoxDecoration(
-            borderRadius: borderRadius ??
-                const BorderRadius.only(
-                    topRight: Radius.circular(AppValues.radiusDefault)),
+            borderRadius:
+                borderRadius ?? BorderRadius.circular(AppValues.radiusDefault),
             color: metacriticScoreColor ?? Colors.red),
         alignment: Alignment.center,
         child: Text(
