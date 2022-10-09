@@ -8,6 +8,8 @@ import 'package:videogames_list_mobile/generated/l10n.dart';
 
 class VideoGameDetailController extends BaseController
     with StateMixin<PlaystationGameDetailResponse> {
+  static const paramGameID = "gameId";
+
   /// Games data repository
   final IGamesDataRepository _repository = Get.find();
 
@@ -19,7 +21,7 @@ class VideoGameDetailController extends BaseController
 
   /// Fetching playstation game detail
   Future<void> fetchPlayStationGameDetail() async {
-    String gameID = Get.parameters['gameId'] ?? '';
+    String gameID = Get.parameters[paramGameID] ?? '';
 
     if (gameID.isEmpty) {
       change(null,

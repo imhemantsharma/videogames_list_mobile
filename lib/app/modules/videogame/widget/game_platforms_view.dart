@@ -4,6 +4,7 @@ import 'package:videogames_list_mobile/app/core/values/app_values.dart';
 import 'package:videogames_list_mobile/app/core/values/text_styles.dart';
 import 'package:videogames_list_mobile/app/core/widgets/animation_view.dart';
 import 'package:videogames_list_mobile/app/data/model/playstation_game_platform.dart';
+import 'package:videogames_list_mobile/generated/l10n.dart';
 
 class GamePlatformsView extends StatelessWidget {
   const GamePlatformsView({
@@ -24,7 +25,7 @@ class GamePlatformsView extends StatelessWidget {
             padding:
                 const EdgeInsets.symmetric(horizontal: AppValues.paddingDouble),
             child: Text(
-              "Platforms",
+              S.of(context).platforms,
               style: heading.copyWith(
                 color: Colors.white,
               ),

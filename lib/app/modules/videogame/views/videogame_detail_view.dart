@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 import 'package:videogames_list_mobile/app/core/utils/date_util.dart';
 import 'package:videogames_list_mobile/app/core/utils/helper.dart';
+import 'package:videogames_list_mobile/app/core/values/app_images.dart';
 import 'package:videogames_list_mobile/app/core/values/app_values.dart';
 import 'package:videogames_list_mobile/app/core/values/text_styles.dart';
 import 'package:videogames_list_mobile/app/core/widgets/animation_view.dart';
@@ -101,7 +102,7 @@ class VideoGameDetailView extends GetView<VideoGameDetailController> {
                                           fit: BoxFit.cover,
                                           errorWidget: (context, url, error) =>
                                               Image.asset(
-                                                  'assets/images/img_placeholder.png',
+                                                  AppImages.placeholderImage,
                                                   fit: BoxFit.cover)),
                                     ),
                                   ),
@@ -172,7 +173,9 @@ class VideoGameDetailView extends GetView<VideoGameDetailController> {
                                             direction: Axis.horizontal,
                                           ),
                                           Text(
-                                            "  ${state?.rating?.toDouble() ?? 0.0}/5",
+                                            S.of(context).rating(
+                                                state?.rating?.toDouble() ??
+                                                    0.0),
                                             style: mediumText.copyWith(
                                               color: Colors.amber,
                                               letterSpacing: 1,
@@ -215,7 +218,7 @@ class VideoGameDetailView extends GetView<VideoGameDetailController> {
                                   delay: const Duration(
                                       microseconds:
                                           AppValues.animationMicroDelay800),
-                                  child: Text("Overview",
+                                  child: Text(S.of(context).overview,
                                       style: heading.copyWith(
                                           color: Colors.white))),
                               const SizedBox(height: 10),
@@ -228,8 +231,10 @@ class VideoGameDetailView extends GetView<VideoGameDetailController> {
                                   trimLines: 6,
                                   colorClickableText: Colors.pink,
                                   trimMode: TrimMode.Line,
-                                  trimCollapsedText: 'more',
-                                  trimExpandedText: 'less',
+                                  trimCollapsedText:
+                                      S.of(context).more.toLowerCase(),
+                                  trimExpandedText:
+                                      S.of(context).less.toLowerCase(),
                                   style:
                                       mediumText.copyWith(color: Colors.white),
                                   moreStyle: const TextStyle(

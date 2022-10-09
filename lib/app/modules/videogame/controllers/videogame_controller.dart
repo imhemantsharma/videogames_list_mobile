@@ -4,6 +4,7 @@ import 'package:videogames_list_mobile/app/data/model/game_query_payload.dart';
 import 'package:videogames_list_mobile/app/data/model/playstation_game_data.dart';
 import 'package:videogames_list_mobile/app/data/model/playstation_games_response.dart';
 import 'package:videogames_list_mobile/app/data/repository/games_data_repository.dart';
+import 'package:videogames_list_mobile/app/modules/videogame/controllers/videogame_detail_controller.dart';
 import 'package:videogames_list_mobile/app/network/exceptions/base_exception.dart';
 import 'package:videogames_list_mobile/app/routes/app_pages.dart';
 
@@ -29,6 +30,7 @@ class VideoGameController extends BaseController
   void onInit() {
     super.onInit();
     pageNumber = 1;
+    isPaginationLastPage = false;
     fetchPlayStationGames();
   }
 
@@ -78,7 +80,9 @@ class VideoGameController extends BaseController
 
   /// Handle onClick navigation
   void onCardClick(PlaystationGameData data) {
-    var parameter = <String, String>{"gameId": data.id.toString()};
+    var parameter = <String, String>{
+      VideoGameDetailController.paramGameID: data.id.toString()
+    };
 
     Get.toNamed(Routes.gameDetail.routeName, parameters: parameter);
   }

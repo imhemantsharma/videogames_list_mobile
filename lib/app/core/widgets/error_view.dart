@@ -71,7 +71,7 @@ class ErrorView extends StatelessWidget {
               ElevatedButton.icon(
                 onPressed: onErrorCTAClicked,
                 label: Text(
-                  errorCTA ?? 'Retry',
+                  errorCTA ?? S.of(context).retry,
                   style: Theme.of(context)
                       .textTheme
                       .bodyText2

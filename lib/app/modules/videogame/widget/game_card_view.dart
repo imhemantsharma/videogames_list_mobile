@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:videogames_list_mobile/app/core/values/app_images.dart';
 import 'package:videogames_list_mobile/app/core/values/app_values.dart';
 import 'package:videogames_list_mobile/app/core/values/text_styles.dart';
 import 'package:videogames_list_mobile/app/modules/videogame/widget/metacratic_view.dart';
+import 'package:videogames_list_mobile/generated/l10n.dart';
 
 class GameCardView extends StatelessWidget {
   const GameCardView({
@@ -50,7 +52,7 @@ class GameCardView extends StatelessWidget {
                           imageUrl: posterUrl ?? '',
                           fit: BoxFit.cover,
                           errorWidget: (context, url, error) => Image.asset(
-                              'assets/images/img_placeholder.png',
+                              AppImages.placeholderImage,
                               fit: BoxFit.cover),
                         ),
                       ),
@@ -92,7 +94,7 @@ class GameCardView extends StatelessWidget {
                                 direction: Axis.horizontal,
                               ),
                               Text(
-                                '  $rating/5',
+                                S.of(context).rating(rating ?? 0.0),
                                 style: mediumText.copyWith(
                                   color: Colors.amber,
                                   letterSpacing: 1,

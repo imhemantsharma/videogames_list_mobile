@@ -7,5 +7,10 @@
   "retry": "Retry",
   "noDataFound": "No data found!",
   "fetchingDataError": "An error occurred when fetching the games.",
-  "unavailableGameId": "Game id is not available."
+  "unavailableGameId": "Game id is not available.",
+  "overview": "Overview",
+  "more": "More",
+  "less": "Less",
+  "platforms": "Platforms",
+  "rating":  "  {rating}/5"
 }

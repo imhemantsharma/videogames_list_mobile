@@ -1,50 +1,125 @@
-# Coding skills assessment - videogames_list_mobile
-As part of our technical evaluation, the team has designed a take-home assignment for you that can be reasonably completed in a 1 to 3 day period.
+# Video Games List
+This repository demonstrate the Video Games List Mobile App that implements using GetX and DIO.
 
-If you have any questions, feel free to email your HR correspondent and we will be happy to get back to you as soon as possible.
+### App Walkthrough:
+<img src="sample_resources/app_walkthrough.gif" width="300"/>
 
-## Getting Started
-- Create a fork of this repository
-- Complete the requirements based on the evaluation criteria on your fork of the repository
-- Once you're done, make sure to push your commits onto your fork and inform your recruiter. The engineering team will then review your assignment.
+### Structure in modules
 
-# Take-Home Assignment
-Do you like video games? You almost certainly do if you’re a software engineer :) And hopefully you’re a **Playstation** fan ✌️ like us.
+1. **app:** It contains all the modules, bindings, routes, and remote calls that can interact with UI components.
+   1. **bindings**: Initial level bindings
+   2. **core**: Responsible for reusable components, themes, values, and utility.
+   3. **data**: Directory responsible for containing everything related to our data.
+   4. **modules**: Each module consists of a page, its respective GetXController, and its dependencies or Bindings.
+   5. **network**: Responsible for managing all network operations and their error handling.
+   6. **routes**: Storing all the navigation route paths.
+   7. **my_app.dart**: Initial material app setup (Routes, Localization, Theme).
+2. **I10n:** Localization.
+3. **main.dart:** Entry point.
 
-The assignment is to build a mobile application to browse the **latest released** Playstation 5 games, and view **more details** about said games.
+## Getting started
 
-## **Summary/Requirements:**
-1. The app should be built using any mobile technology from this order of preference:
-    1. Flutter (Preferable)
-    2. Any other declarative framework - React Native, Jetpack Compose, Swift UI
-    3. Any other Android, iOS framework (your choice)
-2. List of the latest released Playstation 5 games are displayed in a ListView, GridView or whatever that is deemed useful by the candidate. The following info must be shown:
-    1. Name
-    2. Release Date
-    3. Background Image
-    4. Metacritic Score
-3. Pagination: When the user reached the bottom of the list, it should load the second page if available.
-4. The user is able to view more details (including previous details) of a video game by tapping on a video game:
-    1. Description
-    2. Genres
-    3. (Optional) Any other details you think are useful or interesting for the user such as Screenshots, Other Platforms, Developers, Publishers.
-5. Use Git for managing your source code. Your project must be checked into GitHub and be shared with the team when submitting your assignment.
-6. Update the project’s README to include instructions/steps to compile and debug the project as necessary
-7. The data is fetched from the given API below
+Follow the steps to run the project.
 
-## **Evaluation Criteria**
-1. The solution should be designed and architected to the utmost of your engineering ability. The code should be clean, readable, extensible, testable, performant and maintainable.
-2. The project should be compilable and debuggable.
-3. Try to breakdown your solution into multiple commits and use readable commit message.
-4. Consider using a state-management framework such as Bloc, Provider, Redux or MobX.
-5. Having tests (e.g unit tests, widget tests etc) are greatly appreciated.
-   - For seniors candidates we **strongly** recommend writing tests
-7. If shortlisted, the candidate is expected to discuss their assignment in a subsequent video call. The candidate will be asked to explain their design decisions. Think about why you chose a certain pattern/framework/structure carefully.
-   - If needed, you can have any supporting documentation that can help present your design.
-8. In a nutshell, build the solution for longevity, as though it will be worked on and maintained by a team. And most importantly, have fun :) Feel free to be as creative as you'd like for UI/UX and design.
+```shell
+1. git clone https://github.com/imhemantsharma/videogames_list_mobile.git
+2. cd videogames_list_mobile/
+3. flutter pub get
+4. open I10n/intl_en.arb file and save. It will generate the intl instance.
 
+5. flutter run
+```
 
-## **API**
+After the successful execution of the command, App will run on the connected device (Android/iOS)
+
+Note: If some error occurred while executing the steps then please check the prerequisite info
+
+## Developing
+
+### Built With
+1. **Flutter:** https://docs.flutter.dev/development/tools/sdk/releases?tab=windows
+3. **GetX:** https://pub.dev/packages/get
+4. **Dio:** https://pub.dev/packages/dio
+
+### Prerequisites
+
+**Flutter Intl:** Install the plugin in Android Studio or VS Code.
+1. **Android studio:** https://plugins.jetbrains.com/plugin/13666-flutter-intl
+2. **VS code:** https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl
+
+**Flutter Doctor:**
+```
+[✓] Flutter (Channel stable, 3.3.2, on macOS 12.3.1 21E258 darwin-x64, locale en-GB)
+    • Flutter version 3.3.2 on channel stable at /Users/deq/development/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision e3c29ec00c (4 weeks ago), 2022-09-14 08:46:55 -0500
+    • Engine revision a4ff2c53d8
+    • Dart version 2.18.1
+    • DevTools version 2.15.0
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 32.1.0-rc1)
+    • Android SDK at /Users/deq/Library/Android/sdk
+    • Platform android-33, build-tools 32.1.0-rc1
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 13.2.1)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 13C100
+    • CocoaPods version 1.11.2
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2021.2)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+
+[✓] VS Code (version 1.71.2)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.48.0
+```
+
+### Tests
+
+#### **Unit/Widget test result:**
+
+Follow the steps to execute the all unit/widget test.
+
+```
+1. open terminal
+2. cd/videogames_list_mobile
+3. flutter pub get
+4. flutter test --coverage
+```
+
+<img src="sample_resources/app_widget_test_result.png"/>
+
+**Official Doc:** https://docs.flutter.dev/cookbook/testing/widget
+
+#### **Integration test result:**
+
+Follow the steps to execute the integration test on the default connected device.
+
+```
+1. open terminal
+2. cd/videogames_list_mobile
+3. flutter pub get
+
+To run all tests in this directory on the default device, run:
+4. flutter test integration_test
+```
+
+<img src="sample_resources/app_integration_test.gif" width="300"/>
+
+**Official Doc:** https://docs.flutter.dev/testing/integration-tests#running-using-the-flutter-command
+
+## **Api Reference**
 Fetch the data from RAWG Video Games Database API [https://api.rawg.io/docs/](https://api.rawg.io/docs/). RAWG is an **OpenAPI-compliant free API**, you can download the OpenAPI/Swagger specification from the same link.
 
 
@@ -56,7 +131,7 @@ Query Explanation:
 - `page=1`: Page 1 of results
 - `page_size=20`: Limit the resuts to 20 at a time
 - `platforms=187`: Playstation 5 platform
-- `dates=2020-12-21,2021-12-21`: Start date, end date. Limits the results to 1 year timeframe. Replace end date with the current date, replace start date minus 1 year from current date.
+- `dates=2020-10-09,2022-10-09`: Start date, end date. Limits the results to 1 year timeframe. Replace end date with the current date, replace start date minus 1 year from current date.
 - `ordering=-released`: Sort by released descending
 - `key=02ef6ba5d13444ee86bad607e8bce3f4`: Replace the key with yours (if any)
 
@@ -69,3 +144,4 @@ Query Explanation:
 - `key=02ef6ba5d13444ee86bad607e8bce3f4`: Replace the key with yours (if any)
 
 > Highly suggest the candidate get an API key as it is free, just follow the link above. But you can also use ours provided it has not run out of requests or expired: 02ef6ba5d13444ee86bad607e8bce3f4
+
