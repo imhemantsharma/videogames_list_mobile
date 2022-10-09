@@ -5,7 +5,11 @@ class DateUtil {
   DateUtil._();
 
   static String getDefaultFormattedDate(String? date) {
-    return DateFormat.yMMMMd()
-        .format(date != null ? DateTime.parse(date) : DateTime.now());
+    try {
+      return DateFormat.yMMMMd().format(
+          (date?.isEmpty ?? true) ? DateTime.now() : DateTime.parse(date!));
+    } catch (_) {
+      return date ?? '';
+    }
   }
 }
