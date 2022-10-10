@@ -25,9 +25,9 @@ Follow the steps to run the project.
 1. git clone https://github.com/imhemantsharma/videogames_list_mobile.git
 2. cd videogames_list_mobile/
 3. flutter pub get
-4. open I10n/intl_en.arb file and save. It will generate the intl instance.
-
-5. flutter run
+4. flutter pub global activate intl_utils
+5. flutter pub global run intl_utils:generate
+6. flutter run
 ```
 
 After the successful execution of the command, App will run on the connected device (Android/iOS)
@@ -95,7 +95,9 @@ Follow the steps to execute the all unit/widget test.
 1. open terminal
 2. cd/videogames_list_mobile
 3. flutter pub get
-4. flutter test --coverage
+4. flutter pub global activate intl_utils
+5. flutter pub global run intl_utils:generate
+6. flutter test --coverage
 ```
 
 <img src="sample_resources/app_widget_test_result.png"/>
@@ -110,9 +112,11 @@ Follow the steps to execute the integration test on the default connected device
 1. open terminal
 2. cd/videogames_list_mobile
 3. flutter pub get
+4. flutter pub global activate intl_utils
+5. flutter pub global run intl_utils:generate
 
 To run all tests in this directory on the default device, run:
-4. flutter test integration_test
+6. flutter test integration_test
 ```
 
 <img src="sample_resources/app_integration_test.gif" width="300"/>
