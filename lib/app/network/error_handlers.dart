@@ -44,7 +44,7 @@ Exception _parseDioErrorResponse(DioError dioError) {
       statusCode = dioError.response?.data["statusCode"];
     }
     status = dioError.response?.data["status"];
-    serverMessage = dioError.response?.data["message"];
+    serverMessage = dioError.response?.data["error"];
   } catch (e, s) {
     if (kDebugMode) {
       print("$e");

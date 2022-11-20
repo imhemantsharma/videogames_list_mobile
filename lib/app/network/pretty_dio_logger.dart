@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 /// code copied from https://pub.dev/packages/pretty_dio_logger
 class PrettyDioLogger extends Interceptor {
@@ -55,6 +56,12 @@ class PrettyDioLogger extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    compute(_printRequest, options);
+
+    super.onRequest(options, handler);
+  }
+
+  void _printRequest(RequestOptions options) {
     if (request) {
       _printRequestHeader(options);
     }
@@ -84,11 +91,16 @@ class PrettyDioLogger extends Interceptor {
         }
       }
     }
-    super.onRequest(options, handler);
   }
 
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {
+    compute(_printError, err);
+
+    super.onError(err, handler);
+  }
+
+  void _printError(DioError err) {
     if (error) {
       if (err.type == DioErrorType.response) {
         final uri = err.response?.requestOptions.uri;
@@ -106,11 +118,16 @@ class PrettyDioLogger extends Interceptor {
         _printBoxed(header: 'DioError ║ ${err.type}', text: err.message);
       }
     }
-    super.onError(err, handler);
   }
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
+    compute(_printResponseBody, response);
+
+    super.onResponse(response, handler);
+  }
+
+  void _printResponseBody(Response response) {
     _printResponseHeader(response);
     if (responseHeader) {
       final responseHeaders = <String, String>{};
@@ -126,7 +143,6 @@ class PrettyDioLogger extends Interceptor {
       logPrint('║');
       _printLine('╚');
     }
-    super.onResponse(response, handler);
   }
 
   void _printBoxed({String? header, String? text}) {

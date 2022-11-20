@@ -27,8 +27,8 @@ class VideoGameView extends GetView<VideoGameController> {
             if (!controller.isPaginationLastPage &&
                 !controller.isPaginationLoading.value &&
                 !controller.isPaginationError.value &&
-                scrollInfo.metrics.pixels ==
-                    scrollInfo.metrics.maxScrollExtent) {
+                scrollInfo.metrics.pixels >=
+                    (scrollInfo.metrics.maxScrollExtent - 300)) {
               controller.fetchPlayStationGames();
             }
 

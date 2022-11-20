@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:videogames_list_mobile/app/core/base/base_controller.dart';
+import 'package:videogames_list_mobile/app/core/utils/date_util.dart';
 import 'package:videogames_list_mobile/app/data/model/game_query_payload.dart';
 import 'package:videogames_list_mobile/app/data/model/playstation_game_data.dart';
 import 'package:videogames_list_mobile/app/data/model/playstation_games_response.dart';
@@ -39,7 +40,10 @@ class VideoGameController extends BaseController
   Future<void> fetchPlayStationGames() async {
     if (isPaginationLastPage) return;
 
-    GameQueryPayload queryPayload = GameQueryPayload()..page = pageNumber;
+    GameQueryPayload queryPayload = GameQueryPayload()
+      ..page = pageNumber
+      ..dates =
+          '${DateUtil.getTodayDate(dateFormat: DateUtil.yMMDDash, subtractYear: 2)},${DateUtil.getTodayDate(dateFormat: DateUtil.yMMDDash)}';
 
     callDataService(_repository.getPlaystationGames(queryPayload),
         onNetworkError: (String message) =>

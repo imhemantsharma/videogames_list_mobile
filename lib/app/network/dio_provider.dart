@@ -5,18 +5,18 @@ import 'package:videogames_list_mobile/app/network/request_headers.dart';
 
 class DioProvider {
   static const String baseUrl = 'https://api.rawg.io/api/';
-  static const String apiKey = '02ef6ba5d13444ee86bad607e8bce3f4';
+  static const String apiKey = 'c52e38e3052f4f079357b8c4eaca4c7c';
 
   static Dio? _instance;
 
   static const int _maxLineWidth = 90;
   static final _prettyDioLogger = PrettyDioLogger(
-      requestHeader: true,
-      requestBody: true,
+      requestHeader: kDebugMode,
+      requestBody: kDebugMode,
       responseBody: kDebugMode,
       responseHeader: false,
-      error: true,
-      compact: true,
+      error: kDebugMode,
+      compact: kDebugMode,
       maxWidth: _maxLineWidth);
 
   static final BaseOptions _options = BaseOptions(
