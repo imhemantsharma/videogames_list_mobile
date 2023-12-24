@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class CustomCircleIconView extends StatelessWidget {
   const CustomCircleIconView({
-    Key? key,
+    super.key,
     required this.child,
     this.onTap,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final VoidCallback? onTap;

@@ -49,40 +49,39 @@ Note: If some error occurred while executing the steps then please check the pre
 
 **Flutter Doctor:**
 ```
-[✓] Flutter (Channel stable, 3.3.2, on macOS 12.3.1 21E258 darwin-x64, locale en-GB)
-    • Flutter version 3.3.2 on channel stable at /Users/deq/development/flutter
+[✓] Flutter (Channel stable, 3.16.5, on macOS 14.2 23C64 darwin-arm64, locale en-IN)
+    • Flutter version 3.16.5 on channel stable at /Users/hemant/fvm/versions/3.16.5
     • Upstream repository https://github.com/flutter/flutter.git
-    • Framework revision e3c29ec00c (4 weeks ago), 2022-09-14 08:46:55 -0500
-    • Engine revision a4ff2c53d8
-    • Dart version 2.18.1
-    • DevTools version 2.15.0
+    • Framework revision 78666c8dc5 (5 days ago), 2023-12-19 16:14:14 -0800
+    • Engine revision 3f3e560236
+    • Dart version 3.2.3
+    • DevTools version 2.28.4
 
-[✓] Android toolchain - develop for Android devices (Android SDK version 32.1.0-rc1)
-    • Android SDK at /Users/deq/Library/Android/sdk
-    • Platform android-33, build-tools 32.1.0-rc1
-    • Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java
-    • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+[✓] Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    • Android SDK at /Users/hemant/Library/Android/sdk
+    • Platform android-34, build-tools 34.0.0
+    • Java binary at: /Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-17.0.6b829.9-10027231)
     • All Android licenses accepted.
 
-[✓] Xcode - develop for iOS and macOS (Xcode 13.2.1)
+[✓] Xcode - develop for iOS and macOS (Xcode 15.1)
     • Xcode at /Applications/Xcode.app/Contents/Developer
-    • Build 13C100
-    • CocoaPods version 1.11.2
+    • Build 15C65
+    • CocoaPods version 1.13.0
 
 [✓] Chrome - develop for the web
     • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 
-[✓] Android Studio (version 2021.2)
+[✓] Android Studio (version 2022.3)
     • Android Studio at /Applications/Android Studio.app/Contents
     • Flutter plugin can be installed from:
       🔨 https://plugins.jetbrains.com/plugin/9212-flutter
     • Dart plugin can be installed from:
       🔨 https://plugins.jetbrains.com/plugin/6351-dart
-    • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-17.0.6b829.9-10027231)
 
-[✓] VS Code (version 1.71.2)
-    • VS Code at /Applications/Visual Studio Code.app/Contents
-    • Flutter extension version 3.48.0
+[✓] Network resources
+    • All expected network resources are available.
 ```
 
 ### Tests

@@ -5,7 +5,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:videogames_list_mobile/app/network/exceptions/api_exception.dart';
 import 'package:videogames_list_mobile/app/network/exceptions/app_exception.dart';
-import 'package:videogames_list_mobile/app/network/exceptions/network_exception.dart';
 import 'package:videogames_list_mobile/app/network/exceptions/not_found_exception.dart';
 import 'package:videogames_list_mobile/app/network/exceptions/service_unavailable_exception.dart';
 
@@ -17,24 +16,27 @@ Exception handleError(String error) {
   return AppException(message: error);
 }
 
-Exception handleDioError(DioError dioError) {
+Exception handleDioError(DioException dioError) {
   switch (dioError.type) {
-    case DioErrorType.cancel:
+    case DioExceptionType.cancel:
       return AppException(message: "Request to API server was cancelled");
-    case DioErrorType.connectTimeout:
+    case DioExceptionType.connectionTimeout:
       return AppException(message: "Connection timeout with API server");
-    case DioErrorType.other:
-      return NetworkException("There is no internet connection");
-    case DioErrorType.receiveTimeout:
+    case DioExceptionType.receiveTimeout:
       return TimeoutException("Receive timeout in connection with API server");
-    case DioErrorType.sendTimeout:
+    case DioExceptionType.sendTimeout:
       return TimeoutException("Send timeout in connection with API server");
-    case DioErrorType.response:
+    case DioExceptionType.badResponse:
       return _parseDioErrorResponse(dioError);
+    case DioExceptionType.badCertificate:
+      return AppException(message: "Invalid certificate");
+    case DioExceptionType.connectionError:
+    case DioExceptionType.unknown:
+      return AppException(message: "Something went wrong, Please try again after sometime.");
   }
 }
 
-Exception _parseDioErrorResponse(DioError dioError) {
+Exception _parseDioErrorResponse(DioException dioError) {
   int statusCode = dioError.response?.statusCode ?? -1;
   String? status;
   String? serverMessage;

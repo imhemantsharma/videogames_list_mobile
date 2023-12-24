@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:videogames_list_mobile/app/core/values/app_values.dart';
 
 class LoadingView extends StatelessWidget {
-  const LoadingView({Key? key}) : super(key: key);
+  const LoadingView({super.key});
 
   @override
   Widget build(BuildContext context) {

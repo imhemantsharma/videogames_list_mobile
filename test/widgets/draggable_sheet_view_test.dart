@@ -10,11 +10,11 @@ void main() {
   testWidgets('Draggable sheet view test', (widgetTester) async {
     await widgetTester.pumpWidget(createTestApp(
         child: const DraggableSheetView(
+      minSize: 0.65,
       child: [
         Text('Test 1'),
         Text('Test 2'),
       ],
-      minSize: 0.65,
     )));
     await widgetTester.pump();
 

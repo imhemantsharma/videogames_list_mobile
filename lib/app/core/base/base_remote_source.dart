@@ -11,7 +11,7 @@ abstract class BaseRemoteSource {
     try {
       Response<T> response = await api;
       return response;
-    } on DioError catch (dioError) {
+    } on DioException catch (dioError) {
       Exception exception = handleDioError(dioError);
       if (kDebugMode) {
         print(

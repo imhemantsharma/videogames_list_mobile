@@ -9,7 +9,7 @@ import 'package:videogames_list_mobile/app/routes/app_pages.dart';
 import 'package:videogames_list_mobile/generated/l10n.dart';
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   State<StatefulWidget> createState() => _MyAppState();

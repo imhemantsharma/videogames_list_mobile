@@ -3,8 +3,7 @@ import 'package:videogames_list_mobile/app/core/values/app_values.dart';
 import 'package:videogames_list_mobile/generated/l10n.dart';
 
 class PaginationErrorView extends StatelessWidget {
-  const PaginationErrorView({Key? key, this.errorTitle, this.onTap})
-      : super(key: key);
+  const PaginationErrorView({super.key, this.errorTitle, this.onTap});
 
   final String? errorTitle;
   final VoidCallback? onTap;

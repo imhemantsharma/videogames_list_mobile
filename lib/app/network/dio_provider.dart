@@ -5,7 +5,7 @@ import 'package:videogames_list_mobile/app/network/request_headers.dart';
 
 class DioProvider {
   static const String baseUrl = 'https://api.rawg.io/api/';
-  static const String apiKey = 'c52e38e3052f4f079357b8c4eaca4c7c';
+  static const String apiKey = '{Add_API_KEY_HERE}';
 
   static Dio? _instance;
 
@@ -21,8 +21,8 @@ class DioProvider {
 
   static final BaseOptions _options = BaseOptions(
     baseUrl: baseUrl,
-    connectTimeout: 60 * 1000,
-    receiveTimeout: 60 * 1000,
+    connectTimeout: const Duration(minutes: 1),
+    receiveTimeout: const Duration(minutes: 1),
   );
 
   static Dio get httpDio {
